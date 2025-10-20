@@ -1,0 +1,379 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treinamento - Domínio Sistemas (Folha I)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            font-family: 'Ubuntu', sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            color: #E0E0E0;
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: darkorange;
+            border-bottom: 2px solid darkorange;
+            padding-bottom: 10px;
+            text-align: center;
+            font-weight: 700;
+        }
+        .directory {
+            cursor: pointer;
+            color: darkorange;
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            font-weight: 700;
+            padding: 10px;
+            transition: background-color 0.3s;
+        }
+        .directory:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .directory::before {
+            content: "+";
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+        .directory.open::before {
+            content: "-";
+        }
+        .content {
+            display: none;
+            padding-left: 20px;
+            font-weight: 300;
+        }
+        .directory.open + .content {
+            display: block;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+        }
+        th {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: darkorange;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: 700;
+            text-align: left;
+            transition: background-color 0.3s ease;
+        }
+        th:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+        .highlight {
+            color: yellow;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Treinamento (Folha I)</h1>
+
+        <!-- Importação do Perfil da Folha -->
+        <table>
+            <tr>
+                <th onclick="toggleDirectory(this)">Importação do Perfil da Folha</th>
+            </tr>
+        </table>
+        <div class="content">
+            <ul>
+                <li><strong>&#10687; Para quais empresas realizar:</strong></li><br>
+                <li class="highlight">&#9989; I. As empresas que for cadastrar tudo manualmente no sistema</li>
+                <li class="highlight">&#9989; II. Novas empresas que vierem a ser cadastradas no futuro</li>
+                <li>&#128308; (Não fazer este passo da importação de perfis para empresas que vier de conversão ou exporta/importa)</li><br>
+                <li><strong>&#10687; Como realizar:</strong></li><br>
+                <li class="highlight">&#128193; I. //Controle/Empresas</li><br>
+                <li class="highlight">&#9989; II. Clicar em [ Importação ]</li>
+                <li class="highlight">&#9989; III. No campo "Importar dados" selecionar "Conforme cadastro de perfis de empresas"</li>
+                <li class="highlight">&#9989; IV. Clicar no campo "Perfil e pressionar tecla F2</li>
+                <li class="highlight">&#9989; V. Importar o perfil "Folha de Pagamentos"</li>
+            </ul>
+        </div>
+
+        <!-- Configurações dos Detalhes dos Parâmetros da Empresa -->
+        <table>
+            <tr>
+                <th onclick="toggleDirectory(this)">Configurações dos Detalhes dos Parâmetros da Empresa</th>
+            </tr>
+        </table>
+        <div class="content">
+            <ul>
+                <li class="highlight">&#128193; I. //Controle/Parâmetros</li><br>
+                <li><strong>&#128209;Verificar as seguintes abas:</strong></li><br>
+                <li class="highlight">&#128193; //Geral/e-Social/Geral</li><br>
+                <ul>
+                    <li class="highlight">&#9989;Configurar a classificação tributária da empresa (Ex: Simples Nacional Anexo I a III e V)</li>
+                    <li class="highlight">&#9989;Selecionar "Sim" nos campos que se aplicar à empresa.</li><br>
+                </ul>
+                <li class="highlight">&#128193; //Geral/Cálculo</li><br>
+                <ul>
+                    <li class="highlight">&#9989;Configurar o campo "Usa Rubrica da Empresa" com o código da própria empresa para quem for trabalhar com tabela individualizada de rubricas.</li>
+                    <li class="highlight">&#9989;No campo "Discriminar DSR" clicar em [...] e avaliar se deve ser marcado alguma opção</li>
+                    <li class="highlight">&#9989;Configurar o campo "Lançamento de Horas"</li>
+                    <li class="highlight">&#9989;Configurar o campo "Cálculo da Proporcionalidade"</li>
+                    <li class="highlight">&#9989;Marcar o campo "Calcular salário no mês da alteração salarial de forma proporcional à data de alteração", se for necessário.</li>
+                    <li class="highlight">&#9989;Folha de Professores, marcar a opção "Sim" para este tipo de cliente.</li><br>
+                </ul>
+                <li class="highlight">&#128193; //Geral/Personaliza/DSR</li><br>
+                <ul>
+                    <li class="highlight">&#9989;Marcar o campo "Descontar faltas de DSR na competência da data da falta" para quem for necessário</li><br>
+                </ul>
+                <li class="highlight">&#128193; //Geral/Personaliza/Data de Pagamento</li><br>
+                <ul>
+                    <li class="highlight">&#9989;Configurar a data de pagamento da folha mensal e adiantamento, inclusive de 13º (Já traz um padrão)</li><br>
+                </ul>
+                <li class="highlight">&#128193; //Geral/e-Social/Configurações de Envio</li><br>
+                <ul>
+                    <li class="highlight">&#9989;Configurar aba //Geral (No campo "Empresa já enviada anteriormente" selecionar "Sim" para as que for importar os dados dos empregados e cadastros do e-Social e informar à partir de qual competência deseja importar estes dados</li>
+                    <li class="highlight">&#9989;Configurar a aba //Faseamento (Enquadramento da empresa no e-Social)</li>
+                    <li class="highlight">&#9989;Configurar aba //SST (Se vai ou não entregar os eventos de SST do e-Social)</li><br>
+                </ul>
+                <li class="highlight">&#128193; //Regime</li><br>
+                <ul>
+                    <li class="highlight">&#9989;Configurar o regime tributário da empresa</li>
+                    <li class="highlight">&#9989;Se a empresa for do Simples, no campo "Simples Nacional" informar o anexo</li>
+                    <li class="highlight">&#9989;Marcar "Sim" no campo "Possui INSS empresa sobre receita bruta" para quem tiver a desoneração da folha.</li><br>
+                </ul>
+                <li class="highlight">&#128193; //Arredondamento</li><br>
+                <ul>
+                    <li class="highlight">&#9989;Configurar para os clientes que for trabalhar com arredondamento de cálculos da folha</li><br>
+                </ul>
+                <li class="highlight">&#128193; //Adiantamento/Definições</li><br>
+                <ul>
+                    <li class="highlight">&#9989;Configurar os parâmetros de acordo com cada empresa (Já traz um padrão)</li><br>
+                </ul>
+                <li class="highlight">&#128193; //Adiantamento/Proporcionalidade</li><br>
+                <ul>
+                    <li class="highlight">&#9989;Configurar de acordo com a empresa que está sendo parametrizada (Já traz um padrão)</li><br>
+                </ul>
+                <li>&#128308; Demais abas e campos, não é necessário intervenção neste primeiro momento.</li>
+            </ul>
+        </div>
+
+        <!-- Configurar Alíquota FAP -->
+        <table>
+            <tr>
+                <th onclick="toggleDirectory(this)">Configurar Alíquota FAP</th>
+            </tr>
+        </table>
+        <div class="content">
+            <ul>
+                <li class="highlight">&#128193; //Arquivo/Filiais</li><br>
+                <li class="highlight">&#9989; Aba //FAP</li>
+                <ul>
+                    <li class="highlight">&#9989;Clicar em [ Nova Vigência ]</li>
+                    <li class="highlight">&#9989;Informar o coeficiente FAP da empresa para aquela competência</li>
+                </ul>
+                <li>&#128209; Link: <a href="https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=1284&palavraChave=FAP&modulosSelecionados=13" target="_blank">https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=1284&palavraChave=FAP&modulosSelecionados=13</a></li>
+            </ul>
+        </div>
+
+        <!-- Configurar a Lotação Tributária da Empresa e Cadastrar os Tomadores de Serviços -->
+        <table>
+            <tr>
+                <th onclick="toggleDirectory(this)">Configurar a Lotação Tributária da Empresa e Cadastrar os Tomadores de Serviços</th>
+            </tr>
+        </table>
+        <div class="content">
+            <ul>
+                <li>&#128209; Neste passo será configurado o estabelecimento da empresa e se a mesma for um tomador de serviços o qual trabalhar com obras, deverão ser cadastradas todas as obras</li><br>
+                <li class="highlight">&#128193; //Arquivos/Serviços</li><br>
+                <ul>
+                    <li class="highlight">&#9989; I. Selecionar o código 1, clicar na tela para entrar em modo de edição</li>
+                    <li class="highlight">&#9989; II. Aba //Geral - Informar o CNAE e-Social</li>
+                    <li class="highlight">&#9989; III. Aba //e-Social - Informar o tipo de lotação e o tipo de registro de ponto</li>
+                    <li class="highlight">&#9989; IV. Aba INSS (Informar cód. FPAS / Terceiros (Normal) / INSS Empresa / Acid. Trabalho / Pró-labore/Aut / Cód. SEFIP / Cód GPS)</li><br>
+                    <li>&#128308; (Este passo deve ser avaliado em toda empresa recém cadastrada no sistema)</li>
+                </ul><br>
+                <li class="highlight">&#9989; <u>Para empresa com tomador de serviço:</u></li>
+                <li>&#128209; Link: <a href="https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=136&palavraChave=CADASTRA%20SERVI%C3%87O&modulosSelecionados=13" target="_blank">https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=136&palavraChave=CADASTRA%20SERVI%C3%87O&modulosSelecionados=13</a></li>
+            </ul>
+        </div>
+
+        <!-- Parte Cadastral -->
+        <table>
+            <tr>
+                <th onclick="toggleDirectory(this)">Parte Cadastral</th>
+            </tr>
+        </table>
+        <div class="content">
+            <ul>
+                <li><strong>&#10687; Cadastrar os Horários dos Empregados</strong></li>
+                <li class="highlight">&#128193; //Arquivo/Horários</li>
+                <ul>
+                    <li class="highlight">&#9989;Informar os horários de trabalho dos empregados (Cadastrar todos de cada empresa)</li>
+                    <li>&#128209; Link: <a href="https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=3679" target="_blank">https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=3679</a></li>
+                </ul><br>
+                <li><strong>&#10687; Cadastrar as Jornadas dos Empregados</strong></li>
+                <li class="highlight">&#128193; //Arquivo/Jornadas</li>
+                <ul>
+                    <li class="highlight">&#9989;Vincular o horário cadastrado no passo anterior à jornada do empregado (A jornada será vinculada dentro do cadastro do empregado)</li>
+                    <li>&#128209; Link: <a href="https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=3680" target="_blank">https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=3680</a></li>
+                </ul><br>
+                <li><strong>&#10687; Cadastrar os Departamentos das Empresas</strong></li>
+                <li class="highlight">&#128193; //Arquivo/Departamentos</li>
+                <ul>
+                    <li class="highlight">&#9989; (O departamento será vinculado no cadastro do empregado para emissão dos relatórios)</li>
+                    <li>&#128209; Link: <a href="https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=4404" target="_blank">https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=4404</a></li>
+                </ul><br>
+                <li><strong>&#10687; Cadastrar os Centros de Custo</strong></li>
+                <li class="highlight">&#128193; //Arquivo/Centro de Custo</li>
+                <ul>
+                    <li>&#128209; Link: <a href="https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=3683" target="_blank">https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=3683</a></li>
+                </ul><br>
+                <li><strong>&#10687; Cadastrar os Cargos</strong></li>
+                <li class="highlight">&#128193; //Arquivo/Cargos</li>
+                <ul>
+                    <li>&#128209; Link: <a href="https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=98" target="_blank">https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=98</a></li>
+                </ul><br>
+                <li><strong>&#10687; Cadastrar os Feriados</strong></li>
+                <li class="highlight">&#128193; //Arquivo/Outros/Feriados</li>
+                <ul>
+                    <li>&#128209; Link: <a href="https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=38" target="_blank">https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=38</a></li>
+                </ul><br>
+                <li><strong>&#10687; Cadastrar o Sindicato dos Empregados</strong></li>
+                <li class="highlight">&#128193; //Arquivo/Sindicato/Empregados</li>
+                <ul>
+                    <li>&#128209; Link: <a href="https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=3694" target="_blank">https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=3694</a></li>
+                </ul><br>
+                <li><strong>&#10687; Atualizar Tabela do INSS</strong></li>
+                <li class="highlight">&#128193; //Arquivo/Tabelas/INSS</li>
+                <ul>
+                    <li class="highlight">&#9989;Clicar em [ Atualizar ]</li>
+                    <li>&#128209; Link: <a href="https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=3580" target="_blank">https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=3580</a></li>
+                </ul><br>
+                <li><strong>&#10687; Cadastrar Tabela IRRF Progressiva</strong></li>
+                <li class="highlight">&#128193; //Arquivo/Tabelas/IRRF/Progressiva</li>
+                <ul>
+                    <li class="highlight">&#9989;Clicar em [ Novo ]</li>
+                    <li class="highlight">&#9989;Clicar em [ Incluir ]</li>
+                    <li class="highlight">&#9989;Informar faixas e coeficientes</li>
+                    <li>&#128209; Link: <a href="https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=39" target="_blank">https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=39</a></li>
+                </ul>
+            </ul>
+        </div>
+
+        <!-- Realizar o Cadastro dos Colaboradores da Empresa -->
+        <table>
+            <tr>
+                <th onclick="toggleDirectory(this)">Realizar o Cadastro dos Colaboradores da Empresa</th>
+            </tr>
+        </table>
+        <div class="content">
+            <ul><br>
+                <li><strong>&#10687; Cadastrar os Empregados</strong></li>
+                <li class="highlight">&#128193; //Arquivo/Empregados</li>
+                <ul>
+                    <li>&#128209; Link: <a href="https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=5" target="_blank">https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=5</a></li>
+                </ul><br>
+                <li><strong>&#10687; Cadastrar Estagiários</strong></li>
+                <li class="highlight">&#128193; //Arquivo/Estagiários</li>
+                <ul>
+                    <li>&#128209; Link: <a href="https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=2994" target="_blank">https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=2994</a></li>
+                </ul><br>
+                <li><strong>&#10687; Cadastrar Contribuintes</strong></li>
+                <li class="highlight">&#128193; //Arquivo/Contribuintes</li>
+                <ul>
+                    <li>&#128209; Link: <a href="https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=4" target="_blank">https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=4</a></li><br>
+                    <li>&#10687; Contribuinte Autônomo: <a href="https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=243" target="_blank">https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=243</a></li><br>
+                    <li>&#10687; Autônomo: <a href="https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=4684" target="_blank">https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=4684</a></li><br>
+                </ul>
+                <li>&#128209; (Tarefa deste treinamento - tentar cadastrar demais empregados / sócios e contribuintes das empresas)</li>
+            </ul>
+        </div>
+
+        <!-- Relatórios Admissionais -->
+        <table>
+            <tr>
+                <th onclick="toggleDirectory(this)">Relatórios Admissionais</th>
+            </tr>
+        </table>
+        <div class="content">
+            <ul>
+                <li class="highlight">&#128193; //Relatórios/Cadastrais/Admissionais</li>
+                <li>&#128209; Link: <a href="https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=5136&palavraChave=RELAT%C3%93RIO%20ADMISSIONAL&modulosSelecionados=13" target="_blank">https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=5136&palavraChave=RELAT%C3%93RIO%20ADMISSIONAL&modulosSelecionados=13</a></li>
+            </ul>
+        </div>
+
+        <!-- Informações Obrigatórias do e-Social -->
+        <table>
+            <tr>
+                <th onclick="toggleDirectory(this)">Informações Obrigatórias do e-Social</th>
+            </tr>
+        </table>
+        <div class="content">
+            <ul>
+                <li class="highlight">&#128193; //Processos/Informações Obrigatórias e-Social</li>
+                <li>&#128308; (Lista os cadastros que falta alguma informação para o e-Social)</li>
+            </ul>
+        </div>
+
+        <!-- Avisos de Cálculo -->
+        <table>
+            <tr>
+                <th onclick="toggleDirectory(this)">Avisos de Cálculo</th>
+            </tr>
+        </table>
+        <div class="content">
+            <ul>
+                <li class="highlight">&#128193; //Controle/Avisos de Cálculo</li>
+                <li>&#128308; (Avisos que ocorrem no momento do cálculo da folha)</li>
+                <li>&#128209; Link: <a href="https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=4343&palavraChave=AVISOS%20DE%20C%C3%81LCULO&modulosSelecionados=13" target="_blank">https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=4343&palavraChave=AVISOS%20DE%20C%C3%81LCULO&modulosSelecionados=13</a></li>
+            </ul>
+        </div>
+
+        <!-- Avisos de Vencimento -->
+        <table>
+            <tr>
+                <th onclick="toggleDirectory(this)">Avisos de Vencimento</th>
+            </tr>
+        </table>
+        <div class="content">
+            <ul>
+                <li class="highlight">&#128193; //Controle/Avisos de Vencimento</li>
+                <li>&#128308; (Avisos que ocorrem no momento que entra no módulo folha)</li>
+                <li>&#128209; Link: <a href="https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=3017&palavraChave=AVISO%20DE%20VENCIMENTO&modulosSelecionados=13" target="_blank">https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=3017&palavraChave=AVISO%20DE%20VENCIMENTO&modulosSelecionados=13</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleDirectory(element) {
+            element.classList.toggle("open");
+            let content = element.closest("table").nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
